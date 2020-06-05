@@ -34,9 +34,9 @@ export const addComments = (comments) => ({
 export const fetchCampsites = () => dispatch => {
 
     dispatch(campsitesLoading());
-    console.log(baseUrl + 'campsites');
+
     return fetch(baseUrl + 'campsites')
-        .then(response => {  
+        .then(response => {
                 if (response.ok) {
                 return response;
                 } else {
