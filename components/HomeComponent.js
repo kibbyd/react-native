@@ -49,7 +49,7 @@ class Home extends Component {
     render() {
         return (
             <ScrollView>
-                <RenderItem
+                  <RenderItem
                     item={this.props.campsites.campsites.filter(campsite => campsite.featured)[0]} />
                 <RenderItem
                     item={this.props.promotions.promotions.filter(promotion => promotion.featured)[0]} />
