@@ -10,6 +10,7 @@ import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
 import { connect } from 'react-redux';
 import { fetchCampsites, fetchComments, fetchPromotions, fetchPartners } from '../redux/ActionCreators';
+import Reservation from './ReservationComponent';
 
 const mapDispatchToProps = {
     fetchCampsites,
@@ -95,9 +96,9 @@ const AboutNavigator = createStackNavigator(
 );
 
 
-const ContactNavigator = createStackNavigator(
+const ReservationNavigator = createStackNavigator(
     {
-        Contact: { screen: Contact }
+        Reservation: { screen: Reservation }
     },
     {
         navigationOptions: ({navigation}) => ({
@@ -109,7 +110,7 @@ const ContactNavigator = createStackNavigator(
                 color: '#fff'
             },
             headerLeft: <Icon
-                name='address-card'
+                name='tree'
                 type='font-awesome'
                 iconStyle={styles.stackIcon}
                 onPress={() => navigation.toggleDrawer()}
@@ -151,12 +152,13 @@ const MainNavigator = createDrawerNavigator(
                 )
             }
         },
-        Directory: {
-            screen: DirectoryNavigator,
+        Reservation: {
+            screen: ReservationNavigator,
             navigationOptions: {
+                drawerLabel: 'Reserve Campsite',
                 drawerIcon: ({tintColor}) => (
                     <Icon
-                        name='list'
+                        name='tree'
                         type='font-awesome'
                         size={24}
                         color={tintColor}
